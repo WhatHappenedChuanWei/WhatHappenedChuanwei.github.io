@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: MIT · Copyright (c) 2026 Chuanwei · 见同目录 LICENSE */
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };

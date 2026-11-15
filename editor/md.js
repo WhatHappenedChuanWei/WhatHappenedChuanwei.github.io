@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: MIT · Copyright (c) 2026 Chuanwei · 见同目录 LICENSE */
 /* 极简 Markdown 渲染器（零依赖）。支持：标题、段落、粗体/斜体/删除线、行内代码、
    代码块、链接、图片、引用、有序/无序/任务列表（可嵌套）、表格、分隔线、Hexo front-matter。
    原始 HTML 一律转义显示（Hexo 里能用，这里只做预览）。 */
