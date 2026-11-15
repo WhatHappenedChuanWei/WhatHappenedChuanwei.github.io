@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>烬灯 开发日志</title>
+    <link href="/2026/11/15/emberlight-devlog-01/"/>
+    <url>/2026/11/15/emberlight-devlog-01/</url>
+    
+    <content type="html"><![CDATA[<p>我做了一个小游戏，叫《烬灯》（Emberlight）。</p><p><strong><a href="/Game/">▶ 现在就玩</a></strong>　·　<a href="https://github.com/WhatHappenedChuanWei/Game">源码在 GitHub</a></p><!-- more --><h2 id="它是什么"><a href="#它是什么" class="headerlink" title="它是什么"></a>它是什么</h2><p>一款原创的 2D 类银河恶魔城（Metroidvania）动作冒险游戏。你是一名提灯者，带着最后一点余烬深入地下，去找那只吞噬了所有光明的巨蛾。</p><p>它是<strong>纯网页</strong>的：不用安装，不用下载，用 Chrome 或 Edge 打开链接就能玩，手机也能玩（会自动出现触屏按键）。</p><p><img src="/img/emberlight/01-title.jpg" alt="标题画面"></p><h2 id="现在有什么"><a href="#现在有什么" class="headerlink" title="现在有什么"></a>现在有什么</h2><ul><li>5 个区域、24 个房间：苔径、沉钟回廊、幽菌深渊、灰烬熔窑、霜息穹顶</li><li>4 种能力：冲刺、蹬墙、二段跳、远程火弹。每拿到一种，之前去不了的地方就开了</li><li>4 个 Boss，其中两个是可选的</li><li>灯饰（护符）、灯座存档和传送、死亡会留下”遗珀”、可以回去取回</li><li>三个存档位、三档难度、怪物图鉴</li></ul><p><img src="/img/emberlight/03-boss.jpg" alt="Boss 战"></p><h2 id="一个有意思的点：没有任何外部素材"><a href="#一个有意思的点：没有任何外部素材" class="headerlink" title="一个有意思的点：没有任何外部素材"></a>一个有意思的点：没有任何外部素材</h2><p>画面、音效、音乐全部由代码生成。角色是用几何图形一笔笔”画”出来的，音乐是用 WebAudio 实时合成的。好处是没有版权问题，体积也很小，整个游戏只有几百 KB。</p><p>坏处也很明显：<strong>它现在更像一个系统齐全的原型</strong>，画面比较朴素，没有逐帧动画。</p><p><img src="/img/emberlight/04-abyss.jpg" alt="幽菌深渊"></p><h2 id="接下来想做什么"><a href="#接下来想做什么" class="headerlink" title="接下来想做什么"></a>接下来想做什么</h2><ul><li>手绘风格的美术和逐帧动画</li><li>更大、更复杂的关卡</li><li>更丰富的战斗，更多 Boss 招式</li><li>正式的配乐</li></ul><h2 id="来玩一下，告诉我哪里不对"><a href="#来玩一下，告诉我哪里不对" class="headerlink" title="来玩一下，告诉我哪里不对"></a>来玩一下，告诉我哪里不对</h2><p>我自己只用自动测试玩过，真人的手感和难度我没法保证。哪里卡住了、哪里太难或太简单，都欢迎到 <a href="https://github.com/WhatHappenedChuanWei/Game/issues">GitHub Issues</a> 告诉我，写清楚在哪个房间、做了什么操作，会很有帮助。</p><p>下一篇会聊聊这个游戏的关卡是怎么拼起来的。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>烬灯</tag>
+      
+      <tag>开发日志</tag>
+      
+      <tag>独立游戏</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
