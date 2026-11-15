@@ -58,6 +58,10 @@ body.noside #side{display:none}
 .rl b{color:var(--mute);font-weight:400;margin-right:6px}
 mark{background:var(--mark);color:inherit;border-radius:2px}
 #work{flex:1;display:flex;flex-direction:column;min-width:0}
+#notice{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:6px 12px;background:var(--sel);border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.5}
+#notice[hidden]{display:none}
+#notice a{color:var(--acc)}
+#notice button{margin-left:auto;border-color:var(--line);padding:2px 10px;font-size:12px}
 #top{display:flex;gap:4px;align-items:center;padding:5px 10px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
 #top .sp{flex:1}
 #top label{font-size:13px;display:inline-flex;gap:4px;align-items:center;margin:0 6px;cursor:pointer}
@@ -147,6 +151,7 @@ body.m-read #pv .doc{margin:0 auto}
   </aside>
   <div class="gutter" id="g-side" title="拖动调整宽度，双击恢复"></div>
   <section id="work">
+    <div id="notice" hidden><span>这是我为自己写博客做的小工具，公开出来供参考。它会直接读写你选择的文件夹：<b>使用前请先备份，删除不可恢复</b>；按现状提供，不提供任何担保。仅支持 Edge / Chrome。</span><a href="https://whathappenedchuanwei.github.io/" target="_blank" rel="noopener">回到博客</a><button id="n-ok">知道了</button></div>
     <div id="top">
       <button id="b-open" title="选择 blog 或 blog\source 文件夹"><svg class="ic"><use href="#i-folder-open"/></svg><span id="b-open-t">打开文件夹</span></button>
       <button id="b-new" title="在 _posts 里新建文章"><svg class="ic"><use href="#i-file-plus"/></svg>新文章</button>
@@ -183,6 +188,14 @@ body.m-read #pv .doc{margin:0 auto}
   </table>
   <p style="margin:12px 0 0;color:var(--mute);font-size:12px">点击空白处关闭 · 删除不进回收站，请谨慎</p>
 </div></div>
+<script>
+(function () {
+  var n = document.getElementById('notice'), ok = false;
+  try { ok = localStorage.getItem('notice-ok') === '1'; } catch (e) {}
+  if (!ok) n.hidden = false;
+  document.getElementById('n-ok').onclick = function () { n.hidden = true; try { localStorage.setItem('notice-ok', '1'); } catch (e) {} };
+})();
+</script>
 <script src="md.js"></script>
 <script src="editor.js"></script>
 </body>

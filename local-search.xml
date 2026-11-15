@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>给自己做了个写博客的编辑器，顺便把它公开了</title>
+    <link href="/2026/11/15/writing-editor/"/>
+    <url>/2026/11/15/writing-editor/</url>
+    
+    <content type="html"><![CDATA[<p>写博客这件事，最麻烦的其实不是写，是围绕写的那些杂事：文章是 <code>source/_posts</code> 里的一个个 Markdown 文件，截图要先存到 <code>source/img</code>，再手写 <code>/img/...</code> 的路径引用，每次新建文章还要把头部信息抄一遍。</p><p>现成的编辑器要么收费，要么不认识这套目录结构。所以我做了一个只为这个博客服务的。</p><p><strong><a href="/editor/">▶ 打开编辑器</a></strong>　·　需要 Edge 或 Chrome</p><!-- more --><h2 id="它是什么"><a href="#它是什么" class="headerlink" title="它是什么"></a>它是什么</h2><p>打开你的博客文件夹，左边是整个目录的文件树，中间写 Markdown，右边实时预览。</p><p><img src="/img/editor/01-editor.jpg" alt="编辑界面"></p><p>它<strong>纯网页、零依赖</strong>，不用安装，也不上传任何东西：文件的读写都发生在你自己的浏览器里，用的是浏览器自带的文件夹访问能力。</p><h2 id="现在能做什么"><a href="#现在能做什么" class="headerlink" title="现在能做什么"></a>现在能做什么</h2><ul><li><strong>文件树</strong>：浏览整个博客目录，右键可以新建、重命名、删除</li><li><strong>全文搜索</strong>：同时搜文件名和内容，点一条结果直接跳到那一行</li><li><strong>贴图</strong>：<code>Ctrl+V</code> 粘贴截图，自动存到 <code>img/文章名/</code> 并插入链接，预览里立刻能看到</li><li><strong>新建文章</strong>：自带 Hexo 的头部信息，也能一键插入摘要分隔线</li><li><strong>任意文本和代码文件</strong>：不只是 Markdown，连中文 Windows 记事本存的 GBK 编码 <code>.txt</code> 也不会乱码</li><li>分栏可以拖动调整，深色模式跟随系统，窗口标题会显示未保存的状态</li></ul><p><img src="/img/editor/02-search.jpg" alt="全文搜索"></p><h2 id="它不是什么"><a href="#它不是什么" class="headerlink" title="它不是什么"></a>它不是什么</h2><p>我想说清楚几件事，免得有人误会：</p><ul><li><strong>它不是 Typora。</strong> 它是左边写、右边看，不是边写边就地渲染。</li><li>没有代码语法高亮。</li><li>只支持 Edge 和 Chrome，Firefox 和 Safari 不支持直接读写文件夹。</li><li><strong>删除不会进回收站。</strong> 它会改写你选中的文件夹里的文件，所以用之前请先备份。</li></ul><p>它首先是我自己用的，公开出来是因为想把做它的过程记下来。你想用当然可以，但它按现状提供，不提供任何担保。</p><h2 id="一段走了弯路的经历"><a href="#一段走了弯路的经历" class="headerlink" title="一段走了弯路的经历"></a>一段走了弯路的经历</h2><p>一开始我不想做成网页。我想要的是”像真正的软件”：右键任意文件，选”用它打开”。</p><p>网页做不到这一点，于是我做了一个本地后台，加启动器，再往注册表里写右键菜单。这些在测试环境里都能跑，可一到我自己的电脑上就接连出问题：先是启动脚本报错；接着我想把它设成文本文件的打开程序，结果 <code>.txt</code> 被绑到了一个根本不能运行的文件上，桌面上 <code>.txt</code> 的图标都变成了一团火焰，双击还报”此应用无法在你的电脑上运行”。</p><p>最后我发现，对一个写博客的编辑器来说，我根本不需要右键打开，<strong>一个网页就够了</strong>。所以我把这一整套都放弃了，改回纯网页，还要专门写一个脚本去修被我弄坏的文件关联。</p><p>教训很朴素：先想清楚”我真正需要什么”，再选技术，而不是先选了一条看起来更像回事的路，再去证明它值得。</p><h2 id="一点技术细节"><a href="#一点技术细节" class="headerlink" title="一点技术细节"></a>一点技术细节</h2><ul><li>Markdown 渲染器是我自己写的，不到两百行，不依赖任何库。它会把原始 HTML 全部转义显示，并过滤危险链接，所以预览别人的文件也不会执行脚本。</li><li>文件读写用的是浏览器的 File System Access API。测试的时候，我用浏览器自带的虚拟文件系统来模拟文件夹，跑了 56 项自动检查：打开、保存、新建、重命名、删除、贴图、搜索、拖动分栏等。</li><li>它随博客一起发布：Hexo 里加一行 <code>skip_render</code>，让这个目录原样复制，不被当成文章处理。</li></ul><h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><ul><li>重命名文件时，自动更新别的文章里指向它的链接</li><li>简单的代码语法高亮</li><li>在页面里直接预览整个博客站点</li></ul><p>如果你用的时候遇到了问题，欢迎告诉我具体做了什么操作，我会尽量复现。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>写作编辑器</tag>
+      
+      <tag>开发日志</tag>
+      
+      <tag>小工具</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>烬灯 开发日志</title>
     <link href="/2026/11/15/emberlight-devlog-01/"/>
     <url>/2026/11/15/emberlight-devlog-01/</url>
@@ -20,9 +49,9 @@
     
     <tags>
       
-      <tag>烬灯</tag>
-      
       <tag>开发日志</tag>
+      
+      <tag>烬灯</tag>
       
       <tag>独立游戏</tag>
       
