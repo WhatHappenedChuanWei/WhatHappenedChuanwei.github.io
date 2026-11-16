@@ -4,6 +4,97 @@
   
   
   <entry>
+    <title>同一个场景，让 AI 把 24 种运镜各拍一遍</title>
+    <link href="/2026/11/17/camera-24/"/>
+    <url>/2026/11/17/camera-24/</url>
+    
+    <content type="html"><![CDATA[<p>做动画的时候，分镜里会写”推””拉””摇””跟拍”。问题是：<strong>写下去，模型真的听得懂吗？</strong></p><p>所以我做了一次机位测试：同一个场景，24 种运镜词，每种拍一条。这篇只是把过程原样记下来，我没有逐条打分，结果你自己看视频。</p><h2 id="怎么测的"><a href="#怎么测的" class="headerlink" title="怎么测的"></a>怎么测的</h2><ul><li>场景：海边老栈桥，下午偏晚的光。人物沿用我已经设定好的小满和猫，没有新增角色。</li><li>模型：MiniMax H3，ComfyUI 里的首帧生视频，8 步加速，864×480，每条约 5.2 秒。</li><li><strong>变量只有运镜。</strong> 24 条共用同一张首帧、同一段小动作（她看海、风吹、猫眨眼），只有”跟拍”那一条里她会往前走。</li><li>没有对白，没有配乐。</li></ul><p>首帧长这样：</p><p><img src="/img/camera/T00-first-frame.jpg" alt="机位测试场的首帧"></p><h2 id="24-种运镜词"><a href="#24-种运镜词" class="headerlink" title="24 种运镜词"></a>24 种运镜词</h2><p>分两组：前 12 个是基础运镜，后 12 个是吸睛的花活。</p><table><thead><tr><th>编号</th><th>中文</th><th>英文</th><th>我写进提示词的 Camera 句</th></tr></thead><tbody><tr><td>T-01</td><td>固定镜头</td><td>static shot</td><td><code>static shot.</code></td></tr><tr><td>T-02</td><td>横摇</td><td>pan</td><td><code>slow pan to the left.</code></td></tr><tr><td>T-03</td><td>纵摇</td><td>tilt</td><td><code>slow tilt up.</code></td></tr><tr><td>T-04</td><td>推</td><td>dolly in</td><td><code>slow dolly in toward the girl.</code></td></tr><tr><td>T-05</td><td>变焦推</td><td>zoom in</td><td><code>slow zoom in on the girl.</code></td></tr><tr><td>T-06</td><td>拉</td><td>dolly out</td><td><code>slow dolly out, the camera drawing backward along the pier axis.</code></td></tr><tr><td>T-07</td><td>横移</td><td>truck</td><td><code>slow truck to the right.</code></td></tr><tr><td>T-08</td><td>升降</td><td>pedestal</td><td><code>slow pedestal up.</code></td></tr><tr><td>T-09</td><td>环绕</td><td>orbit</td><td><code>slow orbit to the right around the girl.</code></td></tr><tr><td>T-10</td><td>跟拍</td><td>tracking shot</td><td><code>slow tracking shot following the girl.</code></td></tr><tr><td>T-11</td><td>手持</td><td>handheld</td><td><code>handheld shot with gentle natural sway.</code></td></tr><tr><td>T-12</td><td>甩镜</td><td>whip pan</td><td><code>fast whip pan to the left.</code></td></tr><tr><td>T-13</td><td>升格摇臂</td><td>crane up</td><td><code>slow crane up and back.</code></td></tr><tr><td>T-14</td><td>航拍</td><td>aerial drone shot</td><td><code>smooth aerial drone shot flying forward over the pier.</code></td></tr><tr><td>T-15</td><td>小星球</td><td>tiny planet</td><td><code>tiny planet effect.</code></td></tr><tr><td>T-16</td><td>360 度环绕</td><td>360-degree orbit</td><td><code>360-degree orbit around the girl, circling steadily to the right.</code></td></tr><tr><td>T-17</td><td>子弹时间</td><td>bullet time</td><td><code>bullet time, the camera arcing around the frozen girl.</code></td></tr><tr><td>T-18</td><td>滚转</td><td>camera roll</td><td><code>camera roll, rotating clockwise around the lens axis.</code></td></tr><tr><td>T-19</td><td>滑动变焦</td><td>dolly zoom</td><td><code>dolly zoom, dolly in while the lens zooms out.</code></td></tr><tr><td>T-20</td><td>焦点转移</td><td>rack focus</td><td><code>rack focus from the cat to the lighthouse.</code></td></tr><tr><td>T-21</td><td>急推变焦</td><td>crash zoom</td><td><code>fast crash zoom on the girl&#39;s back.</code></td></tr><tr><td>T-22</td><td>FPV 穿越</td><td>FPV shot</td><td><code>FPV shot, a fast first-person drone flight.</code></td></tr><tr><td>T-23</td><td>俯冲</td><td>dive</td><td><code>dive, a steep descent from the sky.</code></td></tr><tr><td>T-24</td><td>闪电镜头</td><td>bolt cam</td><td><code>bolt cam, an ultra-fast robotic move.</code></td></tr></tbody></table><p>我自己预感”小星球””360 度环绕””闪电镜头”这几个，模型多半做不好，但这只是出片之前的猜测，我没有逐条验证。</p><h2 id="挑-8-条放在这里"><a href="#挑-8-条放在这里" class="headerlink" title="挑 8 条放在这里"></a>挑 8 条放在这里</h2><p>下面是我随手挑的 8 条原样放出，没有精挑细选，也没有剪辑。视频比较小，点一下才会加载。</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px"><figure style="margin:0"><video src="/video/camera/T-04-dolly-in.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-04 · 推（dolly-in）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-09-orbit.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-09 · 环绕（orbit）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-10-tracking-shot.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-10 · 跟拍（tracking-shot）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-13-crane-up.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-13 · 升格摇臂（crane-up）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-14-aerial-drone-shot.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-14 · 航拍（aerial-drone-shot）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-19-dolly-zoom.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-19 · 滑动变焦（dolly-zoom）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-21-crash-zoom.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-21 · 急推变焦（crash-zoom）</figcaption></figure><figure style="margin:0"><video src="/video/camera/T-22-FPV-shot.mp4" controls preload="none" playsinline style="width:100%"></video><figcaption style="font-size:.85em;text-align:center">T-22 · FPV 穿越（FPV-shot）</figcaption></figure></div><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这批测试我是为了做动画挑运镜，才拍的。它不是严谨的评测：一个模型、一个场景、一个种子，只能说明”这一次的样子”。</p><p>但对我来说已经够用：分镜里要写哪个运镜词，心里大概有数了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>ComfyUI</tag>
+      
+      <tag>开发日志</tag>
+      
+      <tag>运镜</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>同一张画面，我让 AI 换了 146 种画风</title>
+    <link href="/2026/11/17/styles-146/"/>
+    <url>/2026/11/17/styles-146/</url>
+    
+    <content type="html"><![CDATA[<p>做动画之前，我有个很实际的问题：<strong>我不懂美术，也说不清自己想要什么画风。</strong></p><p>所以我干脆让模型一次性把”所有画风”都画一遍，我来挑。</p><h2 id="怎么测的"><a href="#怎么测的" class="headerlink" title="怎么测的"></a>怎么测的</h2><ul><li>模型：Qwen-Image 2.1，本地 ComfyUI 跑，16:9，1344×768，每张约 20 秒。</li><li><strong>同一个画面、同一个随机种子，只换开头那一句画风描述</strong>。画面是：傍晚的”十里亭”前，一个书生和一个女侠面对面站着。</li><li>画风句只写特征，不写作者和作品名。</li></ul><p>这样内容基本固定，差别就只来自画风。</p><h2 id="三轮结果"><a href="#三轮结果" class="headerlink" title="三轮结果"></a>三轮结果</h2><p><strong>第一轮：98 种，分 9 类。</strong> 日韩动漫、欧美卡通、中国风、西方美术、插画技法、手工材质、3D 游戏、摄影影视、设计行业。逐张评估下来：<strong>好 15，一般 45，没出来 38</strong>。</p><p><strong>第二轮：补救。</strong> 没出来的 38 种，我把画面描述减到一句，画风句开头写一次、结尾再重复一次。结果 38 张全部变好，其中 31 张到位。</p><p>这说明第一轮的失败主要不是模型做不到，而是<strong>我写的画面描述太长，把画风压住了</strong>。</p><p><strong>第三、四轮：补全。</strong> 补了一批主流画风，比如国潮、新中式、治愈系、电商家居风（侘寂、北欧极简、奶油风）、工艺民间（掐丝珐琅、紫砂、唐卡）、3D 材质（毛绒、玻璃水晶）。最后总共 <strong>146 种画风，做对的有 114 种</strong>。</p><h2 id="挑几张给你看"><a href="#挑几张给你看" class="headerlink" title="挑几张给你看"></a>挑几张给你看</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px"><figure style="margin:0"><img src="/img/styles/01_日韩动漫_剧场版动画电影.jpg" alt="剧场版动画电影" style="width:100%"><figcaption style="font-size:.85em;text-align:center">01 · 剧场版动画电影</figcaption></figure><figure style="margin:0"><img src="/img/styles/02_日韩动漫_八九十年代手绘动画电影.jpg" alt="八九十年代手绘动画电影" style="width:100%"><figcaption style="font-size:.85em;text-align:center">02 · 八九十年代手绘动画电影</figcaption></figure><figure style="margin:0"><img src="/img/styles/11_日韩动漫_Q版萌系.jpg" alt="Q 版萌系" style="width:100%"><figcaption style="font-size:.85em;text-align:center">11 · Q 版萌系</figcaption></figure><figure style="margin:0"><img src="/img/styles/19_中国风_国风厚涂.jpg" alt="国风厚涂" style="width:100%"><figcaption style="font-size:.85em;text-align:center">19 · 国风厚涂</figcaption></figure><figure style="margin:0"><img src="/img/styles/29_西方美术_巴洛克明暗.jpg" alt="巴洛克明暗" style="width:100%"><figcaption style="font-size:.85em;text-align:center">29 · 巴洛克明暗</figcaption></figure><figure style="margin:0"><img src="/img/styles/40_插画技法_水彩.jpg" alt="水彩" style="width:100%"><figcaption style="font-size:.85em;text-align:center">40 · 水彩</figcaption></figure><figure style="margin:0"><img src="/img/styles/45_插画技法_钢笔淡彩.jpg" alt="钢笔淡彩" style="width:100%"><figcaption style="font-size:.85em;text-align:center">45 · 钢笔淡彩</figcaption></figure><figure style="margin:0"><img src="/img/styles/66_手工材质_潮玩盲盒.jpg" alt="潮玩盲盒" style="width:100%"><figcaption style="font-size:.85em;text-align:center">66 · 潮玩盲盒</figcaption></figure><figure style="margin:0"><img src="/img/styles/70_3D游戏_像素风.jpg" alt="像素风" style="width:100%"><figcaption style="font-size:.85em;text-align:center">70 · 像素风</figcaption></figure><figure style="margin:0"><img src="/img/styles/77_摄影影视_电影剧照.jpg" alt="电影剧照" style="width:100%"><figcaption style="font-size:.85em;text-align:center">77 · 电影剧照</figcaption></figure><figure style="margin:0"><img src="/img/styles/85_摄影影视_宝丽来.jpg" alt="宝丽来" style="width:100%"><figcaption style="font-size:.85em;text-align:center">85 · 宝丽来</figcaption></figure><figure style="margin:0"><img src="/img/styles/08_日韩动漫_黑白漫画.jpg" alt="黑白漫画（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">08 · 黑白漫画（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/23_中国风_敦煌壁画.jpg" alt="敦煌壁画（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">23 · 敦煌壁画（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/25_中国风_剪纸皮影.jpg" alt="剪纸皮影（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">25 · 剪纸皮影（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/26_中国风_青花瓷.jpg" alt="青花瓷（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">26 · 青花瓷（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/46_插画技法_铅笔素描.jpg" alt="铅笔素描（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">46 · 铅笔素描（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/51_插画技法_孟菲斯.jpg" alt="孟菲斯（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">51 · 孟菲斯（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/117_电商家居_侘寂风.jpg" alt="侘寂风（补救轮）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">117 · 侘寂风（补救轮）</figcaption></figure><figure style="margin:0"><img src="/img/styles/128_工艺民间_紫砂.jpg" alt="紫砂（第四批）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">128 · 紫砂（第四批）</figcaption></figure><figure style="margin:0"><img src="/img/styles/136_3D材质_玻璃水晶.jpg" alt="玻璃水晶（第四批）" style="width:100%"><figcaption style="font-size:.85em;text-align:center">136 · 玻璃水晶（第四批）</figcaption></figure></div><h2 id="我学到的几点"><a href="#我学到的几点" class="headerlink" title="我学到的几点"></a>我学到的几点</h2><ol><li><strong>模型擅长的</strong>：日式动画的各种细分、韩漫、Q 版、厚涂和水彩这类笔触、写实照片、潮玩手办、像素风。</li><li><strong>容易失败的</strong>：黑白和单色类（会偷偷上色）、要改人物造型的（立体主义、超现实）、工艺材质类。</li><li><strong>画风要靠”短文字 + 重复画风句”来控制</strong>。长描述会把画风压回”日式动漫加夕阳”这种默认底子。</li><li><strong>短描述的代价是人物细节管不住</strong>：年龄、发型、剑背在哪里，都可能乱。所以人物和场景的细节，要交给参考图来锁定，别靠长文字。</li><li><strong>常见小毛病</strong>：女侠会多出第二把剑，剑会变成大刀，书生的发髻会散开。</li></ol><h2 id="还有一件事"><a href="#还有一件事" class="headerlink" title="还有一件事"></a>还有一件事</h2><p>我用同一套画面和画风句，也让 ChatGPT 的图片功能出了一版（125 条），打算做左右对照。这部分评估我还没做完，等有结论了再单独写。</p><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>对一个不懂美术的人来说，这一步很值：我不用先学一堆画风名词，看完图就知道自己喜欢什么、模型又能不能做出来。</p><p>后来我选画风、做动画的整个过程，在<a href="/2026/11/17/why-i-stopped-short-drama/">上一篇</a>里。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>随笔</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>ComfyUI</tag>
+      
+      <tag>画风</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>折腾了一阵 ComfyUI 之后，我决定不做短剧了</title>
+    <link href="/2026/11/17/why-i-stopped-short-drama/"/>
+    <url>/2026/11/17/why-i-stopped-short-drama/</url>
+    
+    <content type="html"><![CDATA[<p>上一篇写了我这几个月折腾 AI 的经过，结尾说我决定不做短剧了。这篇把原因展开写，也把我在 ComfyUI 里做过的东西留个记录。</p><h2 id="我到底做了什么"><a href="#我到底做了什么" class="headerlink" title="我到底做了什么"></a>我到底做了什么</h2><p>我的电脑是 5060 Ti 16G、32G 内存。在上面，我先后做了两个项目。</p><p><strong>001：数字人口播（11 月 5 日）</strong><br>用 Z-Image Turbo 出人像，再用 MiniMax H3 把图片变成会说话、带口型的视频。H3 是画面和声音一起生成的，没有单独的配音，声音全靠提示词控制：</p><ul><li>标点控制节奏：逗号是短停顿，问号尾音上扬，省略号是明显的停顿（实测约 1.2 秒）。</li><li>描述写清音色、语速和情绪，同一段提示词换个随机种子，音色和语气变化会很大，没法精确固定同一个声音。</li><li>测试档 8 步，一条约 2.5 分钟；成片档 768p 20 步，一条约 25 分钟。</li></ul><p>Z-Image 出的人像，只换随机种子时长相变化很小，想要明显不同得改提示词：</p><p><img src="/img/comfyui/01-portraits.jpg" alt="Z-Image 生成的人像"></p><p><strong>002：手绘动画《夏天的最后一班车》</strong><br>Qwen-Image 出首帧、定妆图和场景线稿，再用 H3 出视频。中间我没有自己摸索，而是直接采用了一位博主公开的”导演工作流”：先写完整故事，再做人物和地点设定，锁定参考图，分镜、出片、质检、剪辑，最后交付带字幕的成片。</p><p>流程里有很多是为了解决”一致性”：人物中途出场时，首帧里没有他，模型就会照着文字现编，跟定妆图对不上。所以后来要给反复出现的道具（比如巴士、红箱子）也单独做设定图。</p><p>下面是其中一个镜头的接触表：一辆巴士开进站，小满拉着红箱子下车。每一格是视频里抽出的一帧，用来检查人物和道具前后是否一致。</p><p><img src="/img/comfyui/02-animation-contact.png" alt="《夏天的最后一班车》某个镜头的接触表"></p><p>围绕它我还自己搭了两个小工具：一个后期工作台（字幕、放大、拼接），一个”导演台”网页，用来看进度、分镜卡片墙和粗剪连播。</p><h2 id="真实的成本"><a href="#真实的成本" class="headerlink" title="真实的成本"></a>真实的成本</h2><p>这些事情单看都能做，加在一起的成本才是我后来重新想的东西：</p><ul><li>只有一张显卡。ComfyUI 和 Studio 要排队，一个跑的时候另一个得等。</li><li>16G 显存，实际用的是 544p：10 秒的片子大约要 7 分钟。</li><li>一个镜头要改很多轮。每改一次，就要再等一次。</li><li>一致性靠堆设定图和反复挑选，”挑”和”等”占了大部分时间。</li></ul><h2 id="为什么不做了"><a href="#为什么不做了" class="headerlink" title="为什么不做了"></a>为什么不做了</h2><p>先说清楚：<strong>不是因为 AI 做不出来。</strong> 我朋友的短剧就是用 AI 做出来的，第二部已经一千多万。</p><p>我不做，是因为我看清了自己的位置：</p><ol><li><strong>短剧的事，我是帮忙的，不是主力。</strong> 朋友有多年的积累，流程已经 SOP 化，只差人手和团队。我只是教他一些 AI 的用法，具体的事都是他在做，他现在也用得很熟练了。我再单独去做一条线，既没有他的积累，也没有他的团队。</li><li><strong>我自己的电商还有一堆没做完的事。</strong> 我自己也说不清为什么，一直惦记着折腾短剧，电商里很多事做了一半就放下了。</li><li><strong>短剧本身进入了寒冬。</strong> 红果太强，都上了新闻，这个月流量下来了。热闹的赛道，跟我手上的生意是两回事。</li></ol><p>所以 11 月 15 日，我在笔记里写下一行：<strong>不再做长剧情、漫剧，以后只做小短片。</strong></p><h2 id="留下了什么"><a href="#留下了什么" class="headerlink" title="留下了什么"></a>留下了什么</h2><p>折腾不算白费：</p><ul><li>我知道了本地 AI 视频能做到什么程度，也知道它的耗时和代价。</li><li>我有了一套流程和工具，后面如果要做电商的视频素材，这些都能直接用。</li><li>我把心收回来了。</li></ul><p>短剧交给朋友，我回去做我的电商。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>随笔</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>短剧</tag>
+      
+      <tag>思考</tag>
+      
+      <tag>ComfyUI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>开掉一个员工之后，我折腾了 AI 一整个秋天</title>
     <link href="/2026/11/16/ai-replace-or-hire/"/>
     <url>/2026/11/16/ai-replace-or-hire/</url>
